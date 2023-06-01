@@ -23,7 +23,7 @@ header{
 .main{
     grid-area: main_content;
     grid-template-columns: 1fr;
-    grid-template-areas: "pageButtons" "main_map" "content";
+    grid-template-areas: "main_map" "content";
     display: grid;
 }
 
@@ -39,9 +39,9 @@ header{
     grid-area: main_map;
 }
 
-/* #theSurvey{
+#theSurvey{
     grid-area: survey;
-} */
+}
 
 #placeForButtons{
     grid-area: buttonHome;
@@ -49,12 +49,12 @@ header{
     grid-template-columns: repeat(3, 1fr);
 }
 
-#pageButtons{
+/* #pageButtons{
     grid-area: pageButton;
     display: grid;
     gap: 50px;
 
-}
+} */
 
 .leaflet-popup-content {
     width: 400px;
@@ -83,16 +83,16 @@ button{
     cursor: pointer; /* Mouse pointer on hover */
   }
 
-  .navbar {
+  .nav {
     overflow: hidden;
-    background-color: darkgoldenrod;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     margin: auto;
     margin-bottom: 15px;
+    text-align: center;
 
   }
   
-  /* Links inside the navbar */
+  /* Links inside the navbar
   .navbar a {
     float: left;
     font-size: 16px;
@@ -100,5 +100,5 @@ button{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
+  } */
   

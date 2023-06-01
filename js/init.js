@@ -14,16 +14,18 @@ let CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/
 CartoDB_Positron.addTo(map)
 
 
-// let concert = L.featureGroup();
-// let noConcert = L.featureGroup();
+let supported = L.featureGroup();
+let notSupported = L.featureGroup();
+let dontKnow = L.featureGroup();
 
-// let layers = {
-//     "Respondent who has attended a live concert": concert,
-//     "Respondent who has never attended a live concert": noConcert
-// }
+let layers = {
+    "Respondent who feels UCLA is well equipped with resources for SEA students": supported,
+    "Respondent who does not know if UCLA is well equipped with resources for SEA students": dontKnow,
+    "Respondent who does not feel  UCLA is well equipped with resources for SEA students": notSupported
+}
 
-// // add layer control box
-// L.control.layers(null,layers).addTo(map)
+// add layer control box
+L.control.layers(null,layers).addTo(map)
 
 let circleOptions = {
     radius: 4,
@@ -36,18 +38,24 @@ let circleOptions = {
 
 // create a function to add markers
 function addMarker(data){
-    // if(data["Have you ever attended a live concert?"] == "Yes"){
+    if(data["Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)"] == "Yes"){
         circleOptions.fillColor = "blue"
         L.circleMarker([data.lat,data.lng], circleOptions).addTo(map).bindPopup(`<h2>${data["Where at UCLA do you feel most supported as a Southeast Asian student?"]}</h2>
         <h3>${data["Why do you feel supported in that location? "]}</h3>`)
         createButtons(data.lat,data.lng, data["Where at UCLA do you feel most supported as a Southeast Asian student?"])
-    // }
-    // else{
-    //     circleOptions.fillColor = "red"
-    //     L.circleMarker([0,0],circleOptions).bindPopup('<h2> Have never been to a live conert </h2>')
-    //     createButtons(0,0, "Have never been to a live concert", "")
-    // }
-    // return data['What venue did you see them at?']
+    }
+    else if(data["Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)"] == "No"){
+        circleOptions.fillColor = "red"
+        L.circleMarker([data.lat,data.lng], circleOptions).addTo(map).bindPopup(`<h2>${data["Where at UCLA do you feel most supported as a Southeast Asian student?"]}</h2>
+        <h3>${data["Why do you feel supported in that location? "]}</h3>`)
+        createButtons(data.lat,data.lng, data["Where at UCLA do you feel most supported as a Southeast Asian student?"])
+    }
+    else{
+        circleOptions.fillColor = "green"
+        L.circleMarker([data.lat,data.lng], circleOptions).addTo(map).bindPopup(`<h2>${data["Where at UCLA do you feel most supported as a Southeast Asian student?"]}</h2>
+        <h3>${data["Why do you feel supported in that location? "]}</h3>`)
+        createButtons(data.lat,data.lng, data["Where at UCLA do you feel most supported as a Southeast Asian student?"])
+    }
 }
 
 function createButtons(lat,lng, loc){
@@ -78,10 +86,11 @@ function processData(results){
     results.data.forEach(data => {
         addMarker(data)
     })
-    // concert.addTo(map)
-    // noConcert.addTo(map)
-    // let allLayers = L.featureGroup([concert,noConcert]);
-    // map.fitBounds(allLayers.getBounds());
+    supported.addTo(map)
+    notSupported.addTo(map)
+    dontKnow.addTo(map)
+    let allLayers = L.featureGroup([supported,notSupported,dontKnow]);
+    map.fitBounds(allLayers.getBounds());
 }
 
 
