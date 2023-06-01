@@ -1,8 +1,9 @@
 // declare variables
-let mapOptions = {'center': [34.0709,-118.444],'zoom':9}
+let mapOptions = {'center': [34.0690,-118.444],'zoom':15}
 
 // use the variables
 const map = L.map('the_map').setView(mapOptions.center, mapOptions.zoom);
+
 
 let CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -13,7 +14,6 @@ let CartoDB_Positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/
 CartoDB_Positron.addTo(map)
 
 
-
 // let concert = L.featureGroup();
 // let noConcert = L.featureGroup();
 
@@ -22,8 +22,8 @@ CartoDB_Positron.addTo(map)
 //     "Respondent who has never attended a live concert": noConcert
 // }
 
-// add layer control box
-L.control.layers(null,layers).addTo(map)
+// // add layer control box
+// L.control.layers(null,layers).addTo(map)
 
 let circleOptions = {
     radius: 4,
@@ -38,12 +38,13 @@ let circleOptions = {
 function addMarker(data){
     // if(data["Have you ever attended a live concert?"] == "Yes"){
         circleOptions.fillColor = "blue"
-        concert.addLayer(L.circleMarker([data.lat,data.lng], circleOptions).bindPopup(`<h2>${data["Where at UCLA do you feel most supported as a Southeast Asian student? "]}</h2>`))
-        createButtons(data.lat,data.lng,data['Where at UCLA do you feel most supported as a Southeast Asian student?'])
+        L.circleMarker([data.lat,data.lng], circleOptions).addTo(map).bindPopup(`<h2>${data["Where at UCLA do you feel most supported as a Southeast Asian student?"]}</h2>
+        <h3>${data["Why do you feel supported in that location? "]}</h3>`)
+        createButtons(data.lat,data.lng, data["Where at UCLA do you feel most supported as a Southeast Asian student?"])
     // }
     // else{
     //     circleOptions.fillColor = "red"
-    //     noConcert.addLayer(L.circleMarker([0,0],circleOptions).bindPopup('<h2> Have never been to a live conert </h2>'))
+    //     L.circleMarker([0,0],circleOptions).bindPopup('<h2> Have never been to a live conert </h2>')
     //     createButtons(0,0, "Have never been to a live concert", "")
     // }
     // return data['What venue did you see them at?']
@@ -56,7 +57,7 @@ function createButtons(lat,lng, loc){
     newButton.setAttribute("lat",lat); // sets the latitude 
     newButton.setAttribute("lng",lng); // sets the longitude 
     newButton.addEventListener('click', function(){
-        const zoom = 13;
+        const zoom = 17;
         map.flyTo([lat,lng],zoom); //this is the flyTo from Leaflet
     })
     const spaceForButtons = document.getElementById('placeForButtons')
@@ -76,7 +77,6 @@ function loadData(url){
 function processData(results){
     results.data.forEach(data => {
         addMarker(data)
-        //console.log(data)
     })
     // concert.addTo(map)
     // noConcert.addTo(map)
