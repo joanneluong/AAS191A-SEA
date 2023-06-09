@@ -2,7 +2,7 @@ body{
     display: grid;
     grid-auto-rows: 50px auto auto;
     grid-template-areas: "header" "main_content" "footer";
-    background-color: rgb(247, 242, 230);
+    background-color: white;
     gap: 10px;
 }
 
@@ -12,7 +12,7 @@ header{
     align-self: center;
     font-size: x-large;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
-
+    width: 100%;
 }
 
 
@@ -49,12 +49,6 @@ header{
     grid-template-columns: repeat(3, 1fr);
 }
 
-/* #pageButtons{
-    grid-area: pageButton;
-    display: grid;
-    gap: 50px;
-
-} */
 
 .leaflet-popup-content {
     width: 400px;
@@ -83,22 +77,32 @@ button{
     cursor: pointer; /* Mouse pointer on hover */
   }
 
-  .nav {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    margin: auto;
-    margin-bottom: 15px;
-    text-align: center;
-
+    background-color: #333;
   }
   
-  /* Links inside the navbar
-  .navbar a {
+  li {
     float: left;
-    font-size: 16px;
+  }
+  
+  li a {
+    display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  } */
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+  }
+
+  .active {
+    background-color: #04AA6D;
+  }
   
