@@ -22,20 +22,20 @@ header{
 
 .main{
     grid-area: main_content;
-    grid-template-columns: 1fr;
-    grid-template-areas: "main_map" "content";
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "main_map content";
     display: grid;
 }
 
 #contents{
     display: grid;
-    grid-template-areas: "buttonHome";
-    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "buttonHome" "responses";
+    grid-template-rows: 1fr 2fr;
     grid-area: content;
 }
 
 #the_map{
-    height:80vh;
+    height:auto;
     grid-area: main_map;
 }
 
@@ -105,4 +105,5 @@ button{
   .active {
     background-color: #04AA6D;
   }
+  
   

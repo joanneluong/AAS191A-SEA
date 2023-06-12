@@ -72,6 +72,13 @@ function createButtons(lat,lng, loc){
     spaceForButtons.appendChild(newButton);//this adds the button to our page.
 }
 
+// // function addResponses(data){
+//     const newResponse = 
+//     const spaceForResponses = document.getElementById('responses')
+//     spaceForResponses.appendChild(newResponse);
+// //     <h2>${data["Where at UCLA do you feel most supported as a Southeast Asian student?"]}</h2>
+// // }
+
 const dataURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5fFbVnixndmfVEIDIrd-u4b-slbVGsNFv2OmRYxS3fTLNFFEmXdXDF4kuLuuItvaC8Pu_rd8In5TE/pub?output=csv"
 
 function loadData(url){
@@ -85,6 +92,7 @@ function loadData(url){
 function processData(results){
     results.data.forEach(data => {
         addMarker(data)
+        // addResponse(data)
     })
     supported.addTo(map)
     notSupported.addTo(map)
