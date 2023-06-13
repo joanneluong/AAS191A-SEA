@@ -40,3 +40,5 @@ Features in this project:
 * Ament library version: 999
 
 ## Screenshots
+<img width="1377" alt="Screenshot 2023-06-13 at 2 44 32 PM" src="https://github.com/joanneluong/AAS191A-SEA/assets/128201579/0a339a30-8532-416a-b282-b32eb5f0486d">
+
