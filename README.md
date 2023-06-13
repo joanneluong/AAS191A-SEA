@@ -3,7 +3,7 @@ Our project aim to address the inequality faced by the Southeast Asian community
 
 
 * [Objective](#objective)
-* [Who is being empowered](#whoisbeingempowered)
+* [Who is being empowered](#who is being empowered)
 * [What technology was used](#whattechnologywasused)
 
 
