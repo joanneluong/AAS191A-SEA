@@ -20,7 +20,7 @@ This project can empower the community of Southeast Asian students at UCLA, incl
 Project is created with:
 * HTML/CSS
 * Javascript
-* Leaflet-interactive map plugin
+* Leaflet plugin
 * Google Forms
 * Google Sheets
 * Apps Script
