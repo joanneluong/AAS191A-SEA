@@ -38,15 +38,15 @@ function addMarker(data){
         <p>${data["Where at UCLA do you feel most supported as a Southeast Asian student?"]}</p>
         <h3>Why do you feel supported in that location?</h3>
         <p>${data["Why do you feel supported in that location? "]}</p>`).on('click', function(){
-            const element = document.getElementById(data["Where at UCLA do you feel most supported as a Southeast Asian student?"]);
+            const element = document.getElementById(data["Where at UCLA do you feel most supported as a Southeast Asian student?"]); //scrolls to button response on marker click
             element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
         })
         createDropdown(data.lat,data.lng, data["Where at UCLA do you feel most supported as a Southeast Asian student?"]);
     }
 }
 
+// add to the locations collapsible
 function createDropdown(lat,lng, loc){
-    // old button functions
     const newButton = document.createElement("button"); // adds a new button
     newButton.id = "button"; // gives the button a unique id
     newButton.innerHTML = loc; // gives the button a title
@@ -58,9 +58,9 @@ function createDropdown(lat,lng, loc){
     })
     const spaceForButtons = document.getElementById('locations')
     spaceForButtons.appendChild(newButton);//this adds the button to our page.
-
 }
 
+//add to the responses collapsible
 function addResponse(data){
     const newButton = document.createElement("button"); // adds a new button
     newButton.id = data["Where at UCLA do you feel most supported as a Southeast Asian student?"]; // gives the button a unique id
@@ -88,6 +88,7 @@ function addResponse(data){
     resp.appendChild(newButton);
 }
 
+// add survey information to the response
 function addToResponse(newResponse, type, text){
     if(type == "question"){
         const question = document.createElement('question');
@@ -103,7 +104,6 @@ function addToResponse(newResponse, type, text){
     }
 }
 
-const dataURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5fFbVnixndmfVEIDIrd-u4b-slbVGsNFv2OmRYxS3fTLNFFEmXdXDF4kuLuuItvaC8Pu_rd8In5TE/pub?output=csv"
 
 function loadData(url){
     Papa.parse(url, {
@@ -119,13 +119,12 @@ function processData(results){
         addMarker(data)
     })
     supported.addTo(map)
-    // map.fitBounds(allLayers.getBounds());
 }
 
-
+const dataURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5fFbVnixndmfVEIDIrd-u4b-slbVGsNFv2OmRYxS3fTLNFFEmXdXDF4kuLuuItvaC8Pu_rd8In5TE/pub?output=csv"
 loadData(dataURL)
 
-
+// create collapsible
   var coll = document.getElementsByClassName("collapsible");
   var i;
   
