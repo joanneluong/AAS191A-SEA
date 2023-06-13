@@ -30,8 +30,11 @@ Project is created with:
 #### Long Term Impact
 We hope that our map can highlight the areas in UCLA Southeast Asian students feel the most supported in and the experience they have in pursuing higher education. Besides that, the anecdotes provided by the SEA community can provide insight for UCLA, to better understand their needs and provide on-going academic support for them. Currently, there is only one active organization in UCLA, SEA CLEAR at UCLA, that works toward improving SEA student retention rates. We hope that our project can complement SEA CLEAR's efforts by providing additional resources and perspectives for SEA students, ultimately leading to higher retention rates and a more inclusive environment for all students at UCLA.
 
+#### Future Implications
+In the future, we hope that more Southeast Asian students in UCLA can contribute to this mapplication. Furthermore, as more Southeast Asian students in UCLA contribute their unique perspectives and insights to this mapplication, it will serve as a platform for mutual learning and collaboration. The wider UCLA student body can gain a deeper understanding of the Southeast Asian experience by engaging with this website, fostering a stronger culture of inclusivity. 
+
 ## Features
-Features:
+Features in this project:
 * Lorem version: 12.3
 * Ipsum version: 2.33
 * Ament library version: 999
