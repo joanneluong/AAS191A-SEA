@@ -87,13 +87,31 @@ function createDropdown(lat,lng, loc){
 }
 
 function addResponse(data){
-    const container = document.createElement("container");
-    container.id = "response";
-    container.textContent = "sldkf";
-    const spaceForResponse = document.getElementById('responses')
-    spaceForResponse.appendChild(container);
+    const newResponse = document.createElement("container");
+    addToResponse(newResponse, "question", "Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)")
+    addToResponse(newResponse, "response", data["Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)"])
+    addToResponse(newResponse,"question", "Why do you feel that way?");
+    addToResponse(newResponse, "response", data["Why do you feel that way? "]);
+    addToResponse(newResponse, "question", "Where at UCLA do you feel most supported as a Southeast Asian student?");
+    addToResponse(newResponse, "response", data["Where at UCLA do you feel most supported as a Southeast Asian student?"]);
+    const spaceForResponse = document.getElementById('responses');
+    spaceForResponse.appendChild(newResponse);
 }
 
+function addToResponse(newResponse, type, text){
+    if(type == "question"){
+        const question = document.createElement('question');
+        const content = document.createTextNode(text);
+        question.appendChild(content);
+        newResponse.appendChild(question);
+    } 
+    else{
+        const p = document.createElement('p')
+        const response1 = document.createTextNode(text);
+         p.appendChild(response1);
+        newResponse.appendChild(p);
+    }
+}
 
 const dataURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5fFbVnixndmfVEIDIrd-u4b-slbVGsNFv2OmRYxS3fTLNFFEmXdXDF4kuLuuItvaC8Pu_rd8In5TE/pub?output=csv"
 
