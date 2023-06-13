@@ -34,8 +34,10 @@ let circleOptions = {
 function addMarker(data){
     if(data["Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)"] == "Yes"){
         circleOptions.fillColor = "blue"
-        L.circleMarker([data.lat,data.lng], circleOptions).addTo(map).bindPopup(`<h2>${data["Where at UCLA do you feel most supported as a Southeast Asian student?"]}</h2>
-        <h3>${data["Why do you feel supported in that location? "]}</h3>`)
+        L.circleMarker([data.lat,data.lng], circleOptions).addTo(map).bindPopup(`<h3>Where at UCLA do you feel must supported as a Southeast Asian student?</h3>
+        <p>${data["Where at UCLA do you feel most supported as a Southeast Asian student?"]}</p>
+        <h3>Why do you feel supported in that location?</h3>
+        <p>${data["Why do you feel supported in that location? "]}</p>`)
         createDropdown(data.lat,data.lng, data["Where at UCLA do you feel most supported as a Southeast Asian student?"])
     }
 }

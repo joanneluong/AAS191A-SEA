@@ -64,6 +64,7 @@ header{
 .leaflet-popup-content {
     width: 400px;
     height: auto;
+    text-align: center
 }
 
 h2{
