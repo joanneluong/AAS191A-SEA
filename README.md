@@ -27,6 +27,8 @@ Project is created with:
 
 
 ## How it can be repurposed
+# Long Term Impact
+We hope that our map can highlight the areas in UCLA Southeast Asian students feel the most supported in and the experience they have in pursuing higher education. Besides that, the anecdotes provided by the SEA community can provide insight for UCLA, to better understand their needs and provide on-going academic support for them. Currently, there is only one active organization in UCLA, SEA CLEAR at UCLA, that works toward improving SEA student retention rates. We hope that our project can complement SEA CLEAR's efforts by providing additional resources and perspectives for SEA students, ultimately leading to higher retention rates and a more inclusive environment for all students at UCLA.
 
 ## Features
 Features:
