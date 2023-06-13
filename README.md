@@ -2,7 +2,7 @@
 
 * [Objective](#objective)
 * [Who is being empowered](#who-is-being-empowered)
-* [What technology was used](#whattechnologywasused)
+* [What technology was used](#what-technology-was-used)
 
 
 ## Objective
