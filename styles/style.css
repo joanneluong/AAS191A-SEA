@@ -63,6 +63,13 @@ h3{
     text-align: center;
 }
 
+question{
+    font-size:16px;
+    font-weight: bold;
+    font-style: italic;
+    text-align:center;
+}
+
 button{
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     background-color:rgb(239, 211, 176);
@@ -180,7 +187,7 @@ button{
   .content {
     padding: 0 18px;
     display: none;
-    overflow: hidden;
+    overflow: scroll;
     background-color: #f1f1f1;
   }
 
@@ -188,4 +195,12 @@ button{
     width: auto;
     border: 3px solid #DE3163;
     padding: 7px 11px;
+    text-align: center;
+  }
+
+  container{
+    width: auto;
+    border: 3px solid #DE3163;
+    padding: 7px 11px;
+    text-align: center;
   }
