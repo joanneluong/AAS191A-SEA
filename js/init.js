@@ -69,8 +69,7 @@ function createDropdown(lat,lng, loc){
         const zoom = 17;
         map.flyTo([lat,lng],zoom); //this is the flyTo from Leaflet
     })
-    // const spaceForButtons = document.getElementById('placeForButtons')
-    // spaceForButtons.appendChild(newButton);//this adds the button to our page.
+
 
     // const option = document.createElement("option")
     // option.text = loc;
@@ -87,15 +86,35 @@ function createDropdown(lat,lng, loc){
 }
 
 function addResponse(data){
-    const newResponse = document.createElement("container");
-    addToResponse(newResponse, "question", "Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)")
-    addToResponse(newResponse, "response", data["Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)"])
-    addToResponse(newResponse,"question", "Why do you feel that way?");
-    addToResponse(newResponse, "response", data["Why do you feel that way? "]);
-    addToResponse(newResponse, "question", "Where at UCLA do you feel most supported as a Southeast Asian student?");
-    addToResponse(newResponse, "response", data["Where at UCLA do you feel most supported as a Southeast Asian student?"]);
-    const spaceForResponse = document.getElementById('responses');
-    spaceForResponse.appendChild(newResponse);
+    const newButton = document.createElement("button"); // adds a new button
+    newButton.id = "button"; // gives the button a unique id
+    addToResponse(newButton, "question", "Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)")
+    addToResponse(newButton, "response", data["Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)"])
+    addToResponse(newButton, "question", "Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)")
+    addToResponse(newButton, "response", data["Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)"])
+    addToResponse(newButton,"question", "Why do you feel that way?");
+    addToResponse(newButton, "response", data["Why do you feel that way? "]);
+    addToResponse(newButton, "question", "Where at UCLA do you feel most supported as a Southeast Asian student?");
+    addToResponse(newButton, "response", data["Where at UCLA do you feel most supported as a Southeast Asian student?"]);
+    addToResponse(newButton, "question", "Why do you feel supported in that location? ");
+    addToResponse(newButton, "response", data["Why do you feel supported in that location? "]);
+    addToResponse(newButton, "question", "What is your experience with resources/programs/events/ etc. for Southeast Asian students? (either student led or university led)");
+    addToResponse(newButton, "response", data["What is your experience with resources/programs/events/ etc. for Southeast Asian students? (either student led or university led)"]);
+    addToResponse(newButton, "question", "What resources/programs/events would you like to see in UCLA to support Southeast Asian students? ");
+    addToResponse(newButton, "response", data["What resources/programs/events would you like to see in UCLA to support Southeast Asian students? "])
+    addToResponse(newButton, "question", "What is your (expected) year of graduation? ");
+    addToResponse(newButton, "response", data["What is your (expected) year of graduation? "]);
+    newButton.setAttribute("lat",data.lat); // sets the latitude 
+    newButton.setAttribute("lng",data.lng); // sets the longitude 
+    newButton.addEventListener('click', function(){
+        const zoom = 17;
+        map.flyTo([data.lat,data.lng],zoom); //this is the flyTo from Leaflet
+    })
+    const resp = document.getElementById('responses');
+    resp.appendChild(newButton);
+
+    // const spaceForResponse = document.getElementById('responses');
+    // spaceForResponse.appendChild(newResponse);
 }
 
 function addToResponse(newResponse, type, text){
@@ -138,26 +157,6 @@ function processData(results){
 
 
 loadData(dataURL)
-
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
-  
-  // Close the dropdown menu if the user clicks outside of it
-  window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content");
-      var i;
-      for (i = 0; i < dropdowns.length; i++) {
-        var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
-        }
-      }
-    }
-  }
 
 
   var coll = document.getElementsByClassName("collapsible");
