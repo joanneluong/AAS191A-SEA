@@ -35,9 +35,10 @@ In the future, we hope that more Southeast Asian students in UCLA can contribute
 
 ## Features
 Features in this project:
-* Lorem version: 12.3
-* Ipsum version: 2.33
-* Ament library version: 999
+* Interactive Map
+* About Page
+* Menu Bar
+* Survey
 
 
 ## Screenshots
