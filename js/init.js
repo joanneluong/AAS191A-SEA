@@ -37,8 +37,11 @@ function addMarker(data){
         L.circleMarker([data.lat,data.lng], circleOptions).addTo(map).bindPopup(`<h3>Where at UCLA do you feel must supported as a Southeast Asian student?</h3>
         <p>${data["Where at UCLA do you feel most supported as a Southeast Asian student?"]}</p>
         <h3>Why do you feel supported in that location?</h3>
-        <p>${data["Why do you feel supported in that location? "]}</p>`)
-        createDropdown(data.lat,data.lng, data["Where at UCLA do you feel most supported as a Southeast Asian student?"])
+        <p>${data["Why do you feel supported in that location? "]}</p>`).on('click', function(){
+            const element = document.getElementById(data["Where at UCLA do you feel most supported as a Southeast Asian student?"]);
+            element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+        })
+        createDropdown(data.lat,data.lng, data["Where at UCLA do you feel most supported as a Southeast Asian student?"]);
     }
 }
 
@@ -60,7 +63,7 @@ function createDropdown(lat,lng, loc){
 
 function addResponse(data){
     const newButton = document.createElement("button"); // adds a new button
-    newButton.id = "button"; // gives the button a unique id
+    newButton.id = data["Where at UCLA do you feel most supported as a Southeast Asian student?"]; // gives the button a unique id
     addToResponse(newButton, "question", "Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)")
     addToResponse(newButton, "response", data["Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)"])
     addToResponse(newButton,"question", "Why do you feel that way?");
@@ -112,8 +115,8 @@ function loadData(url){
 
 function processData(results){
     results.data.forEach(data => {
-        addMarker(data)
         addResponse(data)
+        addMarker(data)
     })
     supported.addTo(map)
     // map.fitBounds(allLayers.getBounds());
