@@ -15,17 +15,11 @@ CartoDB_Positron.addTo(map)
 
 
 let supported = L.featureGroup();
-let notSupported = L.featureGroup();
-let dontKnow = L.featureGroup();
 
 let layers = {
     "Respondent who feels UCLA is well equipped with resources for SEA students": supported,
-    "Respondent who does not know if UCLA is well equipped with resources for SEA students": dontKnow,
-    "Respondent who does not feel  UCLA is well equipped with resources for SEA students": notSupported
 }
 
-// add layer control box
-L.control.layers(null,layers).addTo(map)
 
 let circleOptions = {
     radius: 4,
@@ -44,18 +38,6 @@ function addMarker(data){
         <h3>${data["Why do you feel supported in that location? "]}</h3>`)
         createDropdown(data.lat,data.lng, data["Where at UCLA do you feel most supported as a Southeast Asian student?"])
     }
-    else if(data["Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)"] == "No"){
-        circleOptions.fillColor = "red"
-        L.circleMarker([data.lat,data.lng], circleOptions).addTo(map).bindPopup(`<h2>${data["Where at UCLA do you feel most supported as a Southeast Asian student?"]}</h2>
-        <h3>${data["Why do you feel supported in that location? "]}</h3>`)
-        createDropdown(data.lat,data.lng, data["Where at UCLA do you feel most supported as a Southeast Asian student?"])
-    }
-    else{
-        circleOptions.fillColor = "green"
-        L.circleMarker([data.lat,data.lng], circleOptions).addTo(map).bindPopup(`<h2>${data["Where at UCLA do you feel most supported as a Southeast Asian student?"]}</h2>
-        <h3>${data["Why do you feel supported in that location? "]}</h3>`)
-        createDropdown(data.lat,data.lng, data["Where at UCLA do you feel most supported as a Southeast Asian student?"])
-    }
 }
 
 function createDropdown(lat,lng, loc){
@@ -69,17 +51,6 @@ function createDropdown(lat,lng, loc){
         const zoom = 17;
         map.flyTo([lat,lng],zoom); //this is the flyTo from Leaflet
     })
-
-
-    // const option = document.createElement("option")
-    // option.text = loc;
-    // option.addEventListener('click', function(){
-    //     const zoom = 17;
-    //     map.flyTo([lat,lng],zoom); //this is the flyTo from Leaflet
-    // })
-    // const dropdownMenu = document.getElementById('myDropdown')
-    // dropdownMenu.appendChild(option)
-
     const spaceForButtons = document.getElementById('locations')
     spaceForButtons.appendChild(newButton);//this adds the button to our page.
 
@@ -88,8 +59,6 @@ function createDropdown(lat,lng, loc){
 function addResponse(data){
     const newButton = document.createElement("button"); // adds a new button
     newButton.id = "button"; // gives the button a unique id
-    addToResponse(newButton, "question", "Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)")
-    addToResponse(newButton, "response", data["Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)"])
     addToResponse(newButton, "question", "Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)")
     addToResponse(newButton, "response", data["Do you feel that UCLA is equipped with adequate resources resources/programs/events/ etc. to support Southeast Asian students? (either student led or university led)"])
     addToResponse(newButton,"question", "Why do you feel that way?");
@@ -112,9 +81,6 @@ function addResponse(data){
     })
     const resp = document.getElementById('responses');
     resp.appendChild(newButton);
-
-    // const spaceForResponse = document.getElementById('responses');
-    // spaceForResponse.appendChild(newResponse);
 }
 
 function addToResponse(newResponse, type, text){
@@ -146,13 +112,9 @@ function processData(results){
     results.data.forEach(data => {
         addMarker(data)
         addResponse(data)
-        // addResponse(data)
     })
     supported.addTo(map)
-    notSupported.addTo(map)
-    dontKnow.addTo(map)
-    let allLayers = L.featureGroup([supported,notSupported,dontKnow]);
-    map.fitBounds(allLayers.getBounds());
+    // map.fitBounds(allLayers.getBounds());
 }
 
 
