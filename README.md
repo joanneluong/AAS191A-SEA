@@ -39,8 +39,14 @@ Features in this project:
 * Ipsum version: 2.33
 * Ament library version: 999
 
+
 ## Screenshots
+#### U-SEA-LA: Southeast Asian Experiences Welcome Page
 <img width="1377" alt="Screenshot 2023-06-13 at 2 44 32 PM" src="https://github.com/joanneluong/AAS191A-SEA/assets/128201579/0a339a30-8532-416a-b282-b32eb5f0486d">
+#### Interactive Map
 <img width="636" alt="Screenshot 2023-06-13 at 2 49 00 PM" src="https://github.com/joanneluong/AAS191A-SEA/assets/128201579/2d44bfc3-1fe5-4066-9b92-cf13eaccf652">
+#### Survey
+<img width="588" alt="Screenshot 2023-06-13 at 2 50 07 PM" src="https://github.com/joanneluong/AAS191A-SEA/assets/128201579/324c5637-a097-4a36-b7a1-90f29c47073a">
+
 
 
