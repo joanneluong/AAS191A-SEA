@@ -3,6 +3,10 @@
 * [Objective](#objective)
 * [Who is being empowered](#who-is-being-empowered)
 * [What technology was used](#what-technology-was-used)
+* [How it can be repurposed](#how-it-can-be-repurposed)
+* [Features](#features)
+* [Screenshots](#screenshots)
+
 
 
 ## Objective
@@ -16,3 +20,13 @@ Project is created with:
 * Lorem version: 12.3
 * Ipsum version: 2.33
 * Ament library version: 999
+
+## How it can be repurposed
+
+## Features
+Features:
+* Lorem version: 12.3
+* Ipsum version: 2.33
+* Ament library version: 999
+
+## Screenshots
