@@ -15,8 +15,6 @@ This project aims to highlight the relationship between the pursuit of higher ed
 ## Who is being empowered
 This project can empower the community of Southeast Asian students at UCLA, including both current and future students. By sharing their personal experiences being Southeast Asian in college and how they navigated through the system, students can gain valuable insights and strategies to overcome challenges and make the most of their educational journey. Additionally, this project aims to create a sense of belonging and solidarity among Southeast Asian students by fostering a supportive network where individuals can connect, collaborate, and uplift one another.
 
-
-Our project will empower the general UCLA student community, including both current and future Bruins, as both groups will benefit from increased awareness about waste habits, reduction, and impact. Community members concerned about sustainability and waste reduction, as well as those less aware of the consistent waste problem will have their voices and personal experiences shared. Additionally, students living on and off-campus will be able to share their experiences, accounting for the varying habits and resources available for the two groups.
 	
 ## What technology was used
 Project is created with:
@@ -26,7 +24,6 @@ Project is created with:
 * Google Forms
 * Google Sheets
 * Apps Script
-
 
 
 ## How it can be repurposed
