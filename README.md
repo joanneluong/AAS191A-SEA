@@ -41,4 +41,6 @@ Features in this project:
 
 ## Screenshots
 <img width="1377" alt="Screenshot 2023-06-13 at 2 44 32 PM" src="https://github.com/joanneluong/AAS191A-SEA/assets/128201579/0a339a30-8532-416a-b282-b32eb5f0486d">
+<img width="636" alt="Screenshot 2023-06-13 at 2 49 00 PM" src="https://github.com/joanneluong/AAS191A-SEA/assets/128201579/2d44bfc3-1fe5-4066-9b92-cf13eaccf652">
+
 
