@@ -17,9 +17,14 @@ This project aims to empower the communnity of Southeast Asian students at UCLA.
 	
 ## What technology was used
 Project is created with:
-* Lorem version: 12.3
-* Ipsum version: 2.33
-* Ament library version: 999
+* HTML/CSS
+* Javascript
+* Leaflet-interactive map plugin
+* Google Forms
+* Google Sheets
+* Apps Script
+
+
 
 ## How it can be repurposed
 
