@@ -1,6 +1,4 @@
 ## U-SEA-LA: Southeast Asian Experiences
-Our project aim to address the inequality faced by the Southeast Asian community, specifically regarding the retention rate and access to higher education. This community has been historically marginalized, and many face significant barriers to obtaining a higher education, which can lead to long-term economic and social disadvantages. The mapplication aims to empower the Southeast Asian community by bringing awareness to the issues they face and highlighting the disparities in access to higher education. This tool can help individuals and organizations understand the scope of the problem and work towards solutions that promote educational equity and inclusivity.
-
 
 * [Objective](#objective)
 * [Who is being empowered](#whoisbeingempowered)
@@ -8,7 +6,7 @@ Our project aim to address the inequality faced by the Southeast Asian community
 
 
 ## Objective
-This project is simple Lorem ipsum dolor generator.
+This project aims to highlight the relationship between the pursuit of higher education by Southeast Asians and the levels of support experienced at UCLA. It will help empower Southeast Asian students at UCLA by disaggregating their narratives from the monolithic stereotypes of Asian people. Through this project, we plan to work with Southeast Asian interest groups on campus to identify the unique challenges that Southeast Asian students face in college. While the data collected will only be for those who are already enrolled in an institution of higher education (namely, UCLA), it still touches upon the issue of retention, and these individuals' opinions and experiences with resources for Southeast Asian students at UCLA. By allowing these stories to be shared in our project, we hope to raise awareness of the specific issues faced by Southeast Asian students and where they have found support while pursuing higher education. Moreover, our mapplication involves asking students about support resources at UCLA. By doing so, we hope that our project can be a resource for other students to reach out to locations on/near campus that have supported their peers.
 	
 ## Who is being empowered
 Project is created with:
